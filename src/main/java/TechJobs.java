@@ -1,3 +1,5 @@
+import java.net.SocketOption;
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -118,8 +120,27 @@ public class TechJobs {
     }
 
     // Print a list of jobs
-    private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+    private static void printJobs(ArrayList<HashMap<String, String>> someJobs)
+    {
+        StringBuilder jobResult;
 
-        System.out.println("printJobs is not implemented yet");
+        if (!someJobs.isEmpty())
+        {
+            for (int i = 0; i < someJobs.size(); i++)
+            {
+                jobResult = new StringBuilder("*****");
+                //for(Map.Entry<String, String> job : someJobs.get(i).entrySet()) its not a job...
+                for (Map.Entry<String, String> jobProperty : someJobs.get(i).entrySet())
+                {
+                    jobResult.append("\n" + jobProperty.getKey() + ": " + jobProperty.getValue());
+                }
+                jobResult.append("\n*****\n");
+                System.out.println(jobResult);
+            }
+        }
+        else
+        {
+            System.out.println("No Results");
+        }
     }
 }
