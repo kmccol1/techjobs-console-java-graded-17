@@ -72,7 +72,10 @@ public class JobData {
 
             String aValue = row.get(column);
 
-            if (aValue.contains(value)) {
+//            if (aValue.contains(value)) {
+//                jobs.add(row);
+//            }
+            if (aValue.equalsIgnoreCase(value)) {
                 jobs.add(row);
             }
         }
@@ -99,7 +102,10 @@ public class JobData {
             {
                 String aValue = jobProperty.getValue();
 
-                if (aValue.contains(value)) {
+//                if (aValue.contains(value)) {
+//                    jobs.add(row);
+//                }
+                if (aValue.contains(value) || aValue.equalsIgnoreCase(value)) {
                     jobs.add(row);
                 }
             }
