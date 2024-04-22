@@ -128,19 +128,20 @@ public class TechJobs {
         {
             for (int i = 0; i < someJobs.size(); i++)
             {
-                jobResult = new StringBuilder("*****");
+                jobResult = new StringBuilder("\n*****");
                 //for(Map.Entry<String, String> job : someJobs.get(i).entrySet()) its not a job...
                 for (Map.Entry<String, String> jobProperty : someJobs.get(i).entrySet())
                 {
                     jobResult.append("\n" + jobProperty.getKey() + ": " + jobProperty.getValue());
                 }
-                jobResult.append("\n*****\n");
+                jobResult.append("\n*****");
                 System.out.println(jobResult);
             }
+
         }
         else
         {
-            System.out.println("No Results");
+            System.out.print("No Results");
         }
     }
 }
